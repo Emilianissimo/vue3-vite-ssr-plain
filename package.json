@@ -1,0 +1,38 @@
+{
+  "name": "plain_one",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "preview": "vite preview",
+    "ssrdev": "node ./src/server.js",
+    "serve": "node ./src/server.js",
+    "build": "set NODE_ENV=production node && npm run build:client && npm run build:server",
+    "build:client": "vite build --ssrManifest --outDir dist/client",
+    "build:server": "vite build --ssr src/main-server.js --outDir dist/server",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "format": "prettier --write src/"
+  },
+  "dependencies": {
+    "@kyvg/vue3-notification": "^3.2.1",
+    "@types/qs": "^6.9.15",
+    "axios": "^1.7.3",
+    "express": "^4.19.2",
+    "jwt-decode": "^4.0.0",
+    "nprogress": "^0.2.0",
+    "qs": "^6.13.0",
+    "vue": "^3.4.29",
+    "vue-router": "^4.3.3",
+    "vuex": "^4.1.0"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-patch": "^1.8.0",
+    "@vitejs/plugin-vue": "^5.1.2",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.23.0",
+    "prettier": "^3.2.5",
+    "vite": "^5.3.1"
+  }
+}
